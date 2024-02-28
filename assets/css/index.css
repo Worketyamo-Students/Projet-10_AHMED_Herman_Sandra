@@ -1,3 +1,66 @@
+:root {
+    --clr-2: #1E99FE;
+    --clr-3: #6A38F5;
+    --clr-4: #EA245A;
+    --clr-5: #EB8145;
+    --linear: linear-gradient(#28272F,#040404);
+}
+
 body {
     background: url(../img/background_body.svg) center top / cover;
 }
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+  
+.card {
+    aspect-ratio: 1 / 1.5;
+    background: var(--clr-1);
+  
+    position: relative;
+}
+  
+  .card::before,
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: -.3px;
+    z-index: -1;
+    background: conic-gradient(
+      from var(--gradient-angle),
+      var(--clr-3),
+      var(--clr-4),
+      var(--clr-5),
+      var(--clr-4),
+      var(--clr-3)
+    );
+    border-radius: inherit;
+    animation: rotation 10s linear infinite;
+  }
+  
+  .card::after {
+    filter: blur(3.5rem);
+  }
+  
+  @keyframes rotation {
+    0% {
+      --gradient-angle: 0deg;
+    }
+    100% {
+      --gradient-angle: 360deg;
+    }
+  }
+  
+  .box {
+    background: var(--linear);
+  }
+
+  button {
+    background: var(--linear);
+    padding: 18px 65px;
+    gap: 4px;
+    border-radius: 10px;
+  }

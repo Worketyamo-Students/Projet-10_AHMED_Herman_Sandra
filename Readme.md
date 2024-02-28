@@ -11,7 +11,6 @@
                 <span id="min">00</span>
                 <span>:</span>
                 <span id="sec">00</span>
-
             </div>
         </div>
     </div>

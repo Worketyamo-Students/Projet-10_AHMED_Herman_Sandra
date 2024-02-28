@@ -8,8 +8,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="flex items-center justify-center flex-col w-screen h-screen">
-    <div class="card w-1/2 h-[300px] rounded-2xl flex items-center justify-center">
-        <div class="box w-[99.5%] h-[99.5%] bg-black rounded-2xl"></div>
+    <div class="card w-3/4 h-[300px] rounded-2xl flex items-center justify-center">
+        <div class="box w-[99.5%] h-[99.5%] bg-black rounded-2xl text-9xl text-white flex items-center justify-between px-20">
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+        </div>
 
     </div>
 
@@ -17,7 +23,16 @@
 
     
     <script>
-    
+        var hrs = document.getElementById ("hrs");
+        var min = document.getElementById ("min");
+        var sec = document.getElementById ("sec");
+
+        setInterval(()=>{
+            var currentTime = new Date();
+            hrs.innerHTML = currentTime.getHours();
+            min.innerHTML = currentTime.getMinutes();
+            sec.innerHTML = currentTime.getSeconds();
+        },1000)
     </script>
 </body>
 </html>

@@ -38,11 +38,11 @@ body {
       var(--clr-3)
     );
     border-radius: inherit;
-    animation: rotation 10s linear infinite;
+    animation: rotation 5s linear infinite;
   }
   
   .card::after {
-    filter: blur(3.5rem);
+    filter: blur(2.5rem);
   }
   
   @keyframes rotation {
@@ -63,4 +63,8 @@ body {
     padding: 18px 65px;
     gap: 4px;
     border-radius: 10px;
+    margin-top: 3rem;
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
   }
